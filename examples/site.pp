@@ -1,7 +1,7 @@
-class { 'observium':
-      installdb            => true,
-      dbpass               => 'password',
-      mysql_root           => 'password',
+node default {
+  class { 'observium':
+      manage_mysql         => true,
+      manage_repo          => false,
       ldap_binddn          => 'CN=REDACTED,CN=Users,DC=examples,DC=com',
       auth_method          => 'ldap',
       ldap_bindpw          => 'password',
@@ -14,6 +14,5 @@ class { 'observium':
       ldap_groupbase       => 'DC=example,DC=com',
       ldap_groupmemberattr => 'member',
       ldap_groupmembertype => 'fulldn'
+  }
 }
-
-  include observium

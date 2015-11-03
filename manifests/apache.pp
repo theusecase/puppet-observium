@@ -21,7 +21,10 @@ class observium::apache (
   package { 'httpd':
     ensure => installed,
   }
-
+  
+  package { 'mod_ssl':
+    ensure => installed,
+  }
 
   ## Ensure default RRD directory
   #

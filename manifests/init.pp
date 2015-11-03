@@ -245,6 +245,10 @@ class observium (
     ## Create repo before package
     ## if repo is managed
     if $manage_repo {
+      # An 'observium' yum repo is a very notable
+      # requirement of this module.  Observium
+      # can be installed from source as well but
+      # that requires refactoring.
       include yumrepos
       Yumrepo <| title == $yum_repo |>
 
@@ -266,8 +270,10 @@ class observium (
     }
   }
 
+  #  May want to include your own apache module here
+  #  and only have observium::apache manage your config
   if $manage_apache {
-    include apache
+    include observium::apache
     
     if $manage_package {
       Class[observium::install] -> Class[observium::apache]

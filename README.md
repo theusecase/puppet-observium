@@ -11,8 +11,9 @@ _This module will:_
 - Add devices (if you set the devices variable)
 - Enable LDAP or MySQL (local) login
 
-#### Important note:  Using the forge Apache/MySQL modules over the Apache/MySQL classes here is recommended.  This module doesn't due to an internal conflict with the forge modules in the environment for which it was developed.
-
+#### Important notes:  
+- Using the forge Apache/MySQL modules over the Apache/MySQL classes here is recommended.  This module doesn't due to an internal conflict with the forge modules in the environment for which it was developed.
+- This module currently requires a 'yumrepos' module with a virtual yum repo resource named 'observium.'  That repo needs to contain an Observium RPM at a minimum, at maximum all the packages noted in the Observium installation documents here:  http://www.observium.org/docs/rhel/.  You will need to get all the dependencies from somewhere, of course.  A nice future addition would be support for the install from source provider.
 
 ## The following parameters are available:
 
